@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="{% static 'coreTeam.css' %}">
 </head>
 <body>
-
+{% for team_member in team_member %}
 <div class="team-card">
     <div class="saturn">
         <div class="saturn-inner">
-            <img src="{{ team_member.image_url }}" alt="{{ team_member.name }}">
+            <img src="{{ team_member.image_url.url }}" alt="{{ team_member.name }}">
             <div class="message">
                 <p>{{ team_member.message }}</p>
             </div>
@@ -26,7 +26,7 @@
             </svg></a>
     </div>
 </div>
-
+{% endfor %}
 </body>
 </html>
 
