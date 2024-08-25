@@ -1,0 +1,58 @@
+{% load static %}
+
+<header id="header" class="fixed top-0 left-0 w-full bg-transparent">
+    <div class="container mx-auto flex items-center justify-between">
+        <nav class="navbar fixed top-0 w-full bg-transparent transition-all duration-500">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'stac_iitmandi/images/STAClogo.png' %}" class="h-12" alt="STAC">
+            </a>
+            <div class="flex items-center">
+                <button class="navbar-toggler ml-auto mr-5 p-2" type="button" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon flex flex-col space-y-1">
+                        <span class="block w-6 h-0.5 bg-white"></span>
+                        <span class="block w-6 h-0.5 bg-white"></span>
+                        <span class="block w-6 h-0.5 bg-white"></span>
+                    </div>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarDefault">
+                    <ul class="navbar-nav flex space-x-4 ml-auto">
+                        <li class="nav-item {{home}}">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown {{events_}}">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Events</a>
+                            <ul class="dropdown-menu bg-white shadow-lg">
+                                <li><a class="dropdown-item {{astrax}}" href="#">ASTRAX</a></li>
+                                <li><a class="dropdown-item {{zenith}}" href="#">ZENITH</a></li>
+                                <li><a class="dropdown-item {{utkarsh}}" href="#">UTKARSH</a></li>
+                                <li><a class="dropdown-item {{pleiades}}" href="#">PLEIADES</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://stac.iitmandi.co.in/blog/">Blog</a>
+                        </li>
+                        <!-- <li class="nav-item {{alumni}}">
+                            <a class="nav-link" href="#">Alumni</a>
+                        </li> -->
+                        <li class="nav-item dropdown {{gallery_}}">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Gallery</a>
+                            <ul class="dropdown-menu bg-white shadow-lg">
+                                <li><a class="dropdown-item {{photos}}" href="#">Photos</a></li>
+                                <li><a class="dropdown-item {{videos}}" href="#">Videos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item {{team}}">
+                            <a class="nav-link" href="#">Team</a>
+                        </li>
+                        <li class="nav-item {{iau}}">
+                            <a class="nav-link" href="#">IAU</a>
+                        </li>
+                        <li class="nav-item {{about}}">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

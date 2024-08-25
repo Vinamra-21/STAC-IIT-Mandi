@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Navbar styling */
+.navbar {
+    @apply transition-all duration-500 ease-in-out;
+}
+
+.navbar-toggler {
+    @apply bg-transparent border-none;
+}
+
+.navbar-toggler:hover {
+    @apply outline-none;
+}
+
+.nav-link {
+    @apply text-white uppercase font-semibold transition duration-500;
+}
+
+.nav-link:hover {
+    @apply text-teal-400;
+}
+
+/* Responsive navbar collapse */
+.navbar-collapse {
+    @apply hidden md:flex;
+}
+
+.navbar-collapse.show {
+    @apply block;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    @apply hidden mt-2 bg-white shadow-lg rounded-lg;
+}
+
+.dropdown-menu.show {
+    @apply block;
+}
+
+.dropdown-item {
+    @apply py-2 px-4 text-black transition-colors duration-500;
+}
+
+.dropdown-item:hover {
+    @apply bg-gray-100;
+}
+
+/* Light background styling */
+.bg-light {
+    @apply bg-gray-100;
+}
+
+/* Navbar reduced state */
+.navbar-reduce {
+    @apply bg-white shadow-md;
+}
+
+.navbar-reduce .nav-link {
+    @apply text-black;
+}

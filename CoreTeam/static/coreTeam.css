@@ -8,13 +8,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .team-card {
     background-image: url('body_back2.jpg');
     background-size: cover;
     background-position: center;
-
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -23,9 +24,12 @@ body {
     text-align: center;
     justify-content: center;
     transition: transform 0.3s ease-in-out;
-    width: 200px;
-    height: 300px;
-    position: relative; 
+    width: 320px;
+    height: 340px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .team-card:hover {
@@ -36,23 +40,23 @@ body {
     position: relative;
     width: 200px;
     height: 200px;
-    margin: 0 auto; /* Center align horizontally */
+    margin-bottom: 20px;
     perspective: 1000px;
 }
 
 .saturn-inner {
-    position: absolute; /* Positioned relative to .saturn */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 120px;
+    width: 190px;
+    height: 190px;
+    position: relative;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center within .saturn */
     transition: transform 0.5s;
     transform-style: preserve-3d;
 }
 
 .team-card:hover .saturn-inner {
-    transform: rotateY(180deg);
+    transform: translate(-45%, -57%) rotateY(180deg); /* Rotate from the center */
 }
 
 .saturn img,
@@ -60,16 +64,15 @@ body {
     backface-visibility: hidden;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    height: 190px;
-    width: 190px;
+    width: 100%; /* Ensure it takes the full size of .saturn-inner */
+    height: 100%; /* Ensure it takes the full size of .saturn-inner */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
 }
 
 .saturn img {
-    z-index: 2; /* Ensure the image is above the ring and message */
+    z-index: 2;
 }
 
 .saturn .message {
@@ -82,12 +85,6 @@ body {
     font-size: 0.9em;
     padding: 10px;
     text-align: center;
-    height: 190px;
-    width: 190px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateY(180deg);
 }
 
 .ring {
@@ -99,12 +96,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the ring is below the image and message */
+    z-index: 1;
 }
 
 h2 {
     color: #ffffff;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
     padding: 10px 0;
 }
