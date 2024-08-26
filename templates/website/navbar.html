@@ -1,54 +1,48 @@
-{% load static %}
-
-<header id="header" class="fixed top-0 left-0 w-full bg-transparent">
-    <div class="container mx-auto flex items-center justify-between">
-        <nav class="navbar fixed top-0 w-full bg-transparent transition-all duration-500">
-            <a class="navbar-brand" href="#">
+{% load static tailwind_tags %}
+<header id="header" class="fixed top-0 left-0 w-full bg-transparent shadow-md z-50">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <nav class="flex items-center justify-between w-full">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'stac_iitmandi/images/STAClogo.png' %}" class="h-12" alt="STAC">
             </a>
             <div class="flex items-center">
-                <button class="navbar-toggler ml-auto mr-5 p-2" type="button" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Toggler button -->
+                <button class="navbar-toggler ml-auto p-2 text-white focus:outline-none md:hidden" type="button" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNavbar()">
                     <div class="animated-icon flex flex-col space-y-1">
                         <span class="block w-6 h-0.5 bg-white"></span>
                         <span class="block w-6 h-0.5 bg-white"></span>
                         <span class="block w-6 h-0.5 bg-white"></span>
                     </div>
                 </button>
-                <div class="navbar-collapse collapse" id="navbarDefault">
-                    <ul class="navbar-nav flex space-x-4 ml-auto">
-                        <li class="nav-item {{home}}">
-                            <a class="nav-link" href="#">Home</a>
+                <!-- Navbar menu -->
+                <div class="navbar-collapse md:flex items-center hidden" id="navbarDefault">
+                    <ul class="navbar-nav flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 ml-auto">
+                        <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'home' %}">Home</a>
                         </li>
-                        <li class="nav-item dropdown {{events_}}">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Events</a>
-                            <ul class="dropdown-menu bg-white shadow-lg">
-                                <li><a class="dropdown-item {{astrax}}" href="#">ASTRAX</a></li>
-                                <li><a class="dropdown-item {{zenith}}" href="#">ZENITH</a></li>
-                                <li><a class="dropdown-item {{utkarsh}}" href="#">UTKARSH</a></li>
-                                <li><a class="dropdown-item {{pleiades}}" href="#">PLEIADES</a></li>
-                            </ul>
+                        <li class="nav-item {% if request.path == '/events/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'events' %}">Events</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://stac.iitmandi.co.in/blog/">Blog</a>
+                        <li class="nav-item {% if request.path == '/blog/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'blog' %}">Blog</a>
                         </li>
-                        <!-- <li class="nav-item {{alumni}}">
-                            <a class="nav-link" href="#">Alumni</a>
+                        <!-- <li class="nav-item {% if request.path == '/alumni/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="#">Alumni</a>
                         </li> -->
-                        <li class="nav-item dropdown {{gallery_}}">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Gallery</a>
-                            <ul class="dropdown-menu bg-white shadow-lg">
-                                <li><a class="dropdown-item {{photos}}" href="#">Photos</a></li>
-                                <li><a class="dropdown-item {{videos}}" href="#">Videos</a></li>
-                            </ul>
+                        <li class="nav-item {% if request.path == '/gallery/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'gallery' %}">Gallery</a>
                         </li>
-                        <li class="nav-item {{team}}">
-                            <a class="nav-link" href="#">Team</a>
+                        <li class="nav-item {% if request.path == '/coreteam/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'coreteam' %}">Team</a>
                         </li>
-                        <li class="nav-item {{iau}}">
-                            <a class="nav-link" href="#">IAU</a>
+                        <li class="nav-item {% if request.path == '/aboutus/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'aboutus' %}">About</a>
                         </li>
-                        <li class="nav-item {{about}}">
-                            <a class="nav-link" href="#">About</a>
+                        <li class="nav-item {% if request.path == '/achievements/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'achievements' %}">Achievements</a>
+                        </li>
+                        <li class="nav-item {% if request.path == '/highlights/' %}active{% endif %}">
+                            <a class="nav-link hover:text-red-500" href="{% url 'highlights' %}">Highlights</a>
                         </li>
                     </ul>
                 </div>
@@ -56,3 +50,10 @@
         </nav>
     </div>
 </header>
+
+<script>
+    function toggleNavbar() {
+        const navbarCollapse = document.getElementById('navbarDefault');
+        navbarCollapse.classList.toggle('hidden');
+    }
+</script>

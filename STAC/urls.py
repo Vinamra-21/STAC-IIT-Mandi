@@ -22,9 +22,13 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact'),
     path('admin/', admin.site.urls),
     path('CoreTeam/', include('CoreTeam.urls')),
+    path('Events/', include('Events.urls')),
+    path('Gallery/', include('Gallery.urls')),
+    path('Achievements/', include('Achievements.urls')),
+    path('Blog/', include('Blog.urls')),
+    path('AboutUs/', include('AboutUs.urls')),
+     path('Highlights/', include('Highlights.urls')),
     path("__reload__", include("django_browser_reload.urls")),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

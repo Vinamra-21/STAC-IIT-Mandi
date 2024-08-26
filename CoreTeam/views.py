@@ -3,7 +3,7 @@ from .models import MemberDetail
 
 # Create your views here.
 
-def team_view(request):
+def CoreTeam(request):
     members = MemberDetail.objects.all()
     return render(request, 'coreTeamLayout.html', {'team_member': members})
 

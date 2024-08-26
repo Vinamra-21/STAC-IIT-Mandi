@@ -5,16 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}STAC{% endblock  %}</title>
-    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <title>{% block title %}STAC{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
     {% block stylesheetsName %}{% endblock stylesheetsName %}
     {% tailwind_css %}
 </head>
 <body>
-    {% block navbar %}
+
     {% include 'website/navbar.html' %}
-    {% endblock %}
-    {% block content %}
-    {% endblock %}
+    <div id="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'website/footer.html' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        VANTA.CLOUDS({
+            el: "body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            skyColor: 0x1b1f5a,        
+            cloudColor: 0x232c61,      
+            cloudShadowColor: 0x000000, 
+            sunColor: 0x000000,         
+            sunGlareColor: 0x000000,    
+            speed: 0.30,                
+            overlap: 0.80,              
+        });
+    });
+    </script>
+
 </body>
 </html>

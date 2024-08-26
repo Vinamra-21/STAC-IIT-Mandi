@@ -47,8 +47,7 @@ INSTALLED_APPS = [
     'tailcss',
     'Gallery',
     'AboutUs',
-    'Home',
-
+    'Highlights',
 
 ]
 
