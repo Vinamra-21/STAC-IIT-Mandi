@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
-{% block stylesheetsName %}<link rel="stylesheet" href="{% static 'events.css' %}">{% endblock  %}
-{% block title %}Events{% endblock %}
-
+{% load static %}
+{% block stylesheetsName %}
+    <link rel="stylesheet" href="{% static 'styles_events.css' %}">
+{% endblock  %}
 {% block content %}
     <div id="taskbar" class="flex justify-center py-6">
         <div class="bg-white shadow-md rounded-lg p-4">
