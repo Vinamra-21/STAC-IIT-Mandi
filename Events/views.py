@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Section
 
 # Create your views here.
 def Events(request):
-    return render(request, 'layout.html')
+    sections = Section.objects.all()
+    return render(request, 'events.html', {'sections': sections})

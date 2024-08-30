@@ -15,10 +15,11 @@
     {% include 'website/navbar.html' %}
     <div id="main-content">
         {% block content %}
+        
         {% endblock %}
     </div>
     {% include 'website/footer.html' %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -38,7 +39,7 @@
             overlap: 0.80,              
         });
     });
-    </script>
+    </script> {% endcomment %}
 
 </body>
 </html>

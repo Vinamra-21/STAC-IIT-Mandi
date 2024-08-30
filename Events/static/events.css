@@ -1,0 +1,71 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+#main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Taskbar Styles */
+#taskbar {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+#taskbar h2 {
+    color: #1a202c;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+#taskbar p {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Photo Grid Styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid .bg-gray-200 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid .bg-gray-200:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grid img {
+    border-radius: 8px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    #taskbar {
+        padding: 1rem;
+    }
+
+    #taskbar h2 {
+        font-size: 1.5rem;
+    }
+
+    #taskbar p {
+        font-size: 0.875rem;
+    }
+}

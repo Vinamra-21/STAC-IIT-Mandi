@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block stylesheetsName %}<link rel="stylesheet" href="{% static 'events.css' %}">{% endblock  %}
+{% block title %}Events{% endblock %}
+
+{% block content %}
+    <div id="taskbar" class="flex justify-center py-6">
+        <div class="bg-white shadow-md rounded-lg p-4">
+            <h2 class="text-2xl font-semibold mb-2">Upcoming Events</h2>
+            <p class="text-gray-600">Check out our upcoming events and make sure to mark your calendar!</p>
+        </div>
+    </div>
+
+    <div class="px-4 py-6">
+        <div class="grid grid-cols-3 gap-4">
+            <!-- Replace `#` with the actual image source or URL -->
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 1" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 2" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 3" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 4" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 5" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 6" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 7" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 8" class="object-cover w-full h-full rounded-lg">
+            </div>
+            <div class="bg-gray-200 h-48 flex items-center justify-center">
+                <img src="images/test.jpg" alt="Event Photo 9" class="object-cover w-full h-full rounded-lg">
+            </div>
+        </div>
+    </div>
+{% endblock %}
