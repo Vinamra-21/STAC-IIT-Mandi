@@ -6,6 +6,3 @@ from .models import MemberDetail
 def CoreTeam(request):
     members = MemberDetail.objects.all()
     return render(request, 'coreTeam.html', {'team_member': members})
-
-def moreInfo(request):
-    return render(request, 'website/moreInfo.html')

@@ -1,34 +1,35 @@
 {% load static %}
 
-<footer class="bg-gray-900 text-gray-400 py-6 mt-3">
+<footer id="footer" class="w-full bg-gray-900 text-gray-400 py-6 mt-3 ">
   <div class="container mx-auto text-center">
     <!-- Logo Section -->
     <div class="mb-4">
-      <img src="{% static 'images/STAClogo.png' %}" class="mx-auto logo-size" alt="STAC IIT Mandi">
+      <img src="{% static 'images/STAClogo.png' %}" class="mx-auto w-32 h-auto" alt="STAC IIT Mandi">
     </div>
     
     <!-- Social Media Icons -->
-    <div class="flex justify-center space-x-4 mb-4">
+    <div class="flex justify-center space-x-6 mb-4">
       <a href="https://www.facebook.com/stacIITMandi/" target="_blank" class="hover:text-blue-500 transition duration-300">
-        <i class="fa fa-facebook-f fa-lg"></i>
+        <i class="fab fa-facebook-f fa-lg"></i>
       </a>
       <a href="https://github.com/STAC-IITMandi" target="_blank" class="hover:text-gray-300 transition duration-300">
-        <i class="fa fa-github fa-lg"></i>
+        <i class="fab fa-github fa-lg"></i>
       </a>
       <a href="https://instagram.com/stac_iitmandi" target="_blank" class="hover:text-pink-500 transition duration-300">
-        <i class="fa fa-instagram fa-lg"></i>
+        <i class="fab fa-instagram fa-lg"></i>
       </a>
       <a href="https://www.youtube.com/channel/STACIITMandi" target="_blank" class="hover:text-red-500 transition duration-300">
-        <i class="fa fa-youtube-play fa-lg"></i>
+        <i class="fab fa-youtube fa-lg"></i>
       </a>
       <a href="https://twitter.com/stac_iitmandi" target="_blank" class="hover:text-blue-400 transition duration-300">
-        <i class="fa fa-twitter fa-lg"></i>
+        <i class="fab fa-twitter fa-lg"></i>
       </a>
     </div>
     
     <!-- Copyright -->
-    <div class="text-center text-sm text-gray-500 mt-4">
-      &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://github.com/STAC-IITMandi" class="text-gray-300 hover:text-white">STAC Web-Development Team</a>. All Rights Reserved.
+    <div class="text-sm text-gray-500 mt-4">
+      &copy; <script>document.write(new Date().getFullYear());</script> 
+      <a href="https://github.com/STAC-IITMandi" class="text-gray-300 hover:text-white">STAC Web-Development Team</a>. All Rights Reserved.
     </div>
   </div>
 </footer>
