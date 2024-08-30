@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def Highlights(request):
-    return render(request, 'layout.html')
+    return render(request, 'highlights.html')

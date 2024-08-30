@@ -1,31 +1,34 @@
 {% load static %}
 
-<footer class="section-bg mt-3 pt-3 rounded">
-  <div class="row">
-    <div class="col-lg-4 text-center">
-      <img src="{% static 'stac_iitmandi/images/STAClogo.png' %}" class="m-auto" alt="STAC IIT Mandi" style="width: 40%;">
+<footer class="bg-gray-900 text-gray-400 py-6 mt-3">
+  <div class="container mx-auto text-center">
+    <!-- Logo Section -->
+    <div class="mb-4">
+      <img src="{% static 'images/STAClogo.png' %}" class="mx-auto logo-size" alt="STAC IIT Mandi">
     </div>
-    <div class="col-lg-4 text-center">
-      <div class="px-3 pt-2 pb-1 text-dark text-center font-weight-bold">Follow us</div>
-      <div class="text-dark text-center px-3 pb-2 footer-links">
-        <a class="p-3 text-dark" target="_blank" href="https://www.facebook.com/stacIITMandi/"><i class="fa fa-facebook-f small"></i></a>
-        <a class="p-3 text-dark" target="_blank" href="https://github.com/STAC-IITMandi"><i class="fa fa-github"></i></a>
-        <a class="p-3 text-dark" target="_blank" href="https://instagram.com/stac_iitmandi"><i class="fa fa-instagram"></i></a>
-        <a class="p-3 text-dark" target="_blank" href="https://www.youtube.com/channel/STACIITMandi"><i class="fa fa-youtube-play"></i></a>
-        <a class="p-3 text-dark" target="_blank" href="https://twitter.com/stac_iitmandi"><i class="fa fa-twitter"></i></a>
-      </div>
+    
+    <!-- Social Media Icons -->
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="https://www.facebook.com/stacIITMandi/" target="_blank" class="hover:text-blue-500 transition duration-300">
+        <i class="fa fa-facebook-f fa-lg"></i>
+      </a>
+      <a href="https://github.com/STAC-IITMandi" target="_blank" class="hover:text-gray-300 transition duration-300">
+        <i class="fa fa-github fa-lg"></i>
+      </a>
+      <a href="https://instagram.com/stac_iitmandi" target="_blank" class="hover:text-pink-500 transition duration-300">
+        <i class="fa fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://www.youtube.com/channel/STACIITMandi" target="_blank" class="hover:text-red-500 transition duration-300">
+        <i class="fa fa-youtube-play fa-lg"></i>
+      </a>
+      <a href="https://twitter.com/stac_iitmandi" target="_blank" class="hover:text-blue-400 transition duration-300">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
     </div>
-    <div class="col-lg-4 text-dark text-center pb-2">
-      <div class="address text-center py-2">
-        <i class="fa fa-map-marker text-dark p-3"></i> Gravity, SAC-001, North Campus, IIT Mandi, Kamand (H.P.) - 175005
-        <br>
-        <a class="p-3 text-dark" href="mailto:stac@students.iitmandi.ac.in"><i class="fa fa-envelope p-3"></i>stac@students.iitmandi.ac.in</a>
-      </div>
+    
+    <!-- Copyright -->
+    <div class="text-center text-sm text-gray-500 mt-4">
+      &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://github.com/STAC-IITMandi" class="text-gray-300 hover:text-white">STAC Web-Development Team</a>. All Rights Reserved.
     </div>
-  </div>
-  <!-- Copyright -->
-  <div class="section-bg copyright text-center py-3"> &copy; <script>
-      document.write(new Date().getFullYear());
-    </script>. <a href="https://github.com/STAC-IITMandi" class="text-dark">STAC</a> Web-Development Team. All Rights Reserved.
   </div>
 </footer>

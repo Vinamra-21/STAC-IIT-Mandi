@@ -1,86 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* base */
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f4f7f6;
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #0d0d0d; 
 }
 
 #main-content {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    #main-content {
-        padding: 10px;
-    }
-}
 
-/* Navbar styling */
-.navbar {
-    @apply transition-all duration-500 ease-in-out;
-}
-
-.navbar-toggler {
-    @apply bg-transparent border-none;
-}
-
-.navbar-toggler:hover {
-    @apply outline-none;
+/* navbar */
+.neon-glow {
+    filter: drop-shadow(0 0 10px #39ff14);
 }
 
 .nav-link {
-    @apply text-white uppercase font-semibold transition duration-500;
+    color: #ffffff;
 }
 
 .nav-link:hover {
-    @apply text-teal-400;
+    color: #39ff14;
 }
 
-/* Responsive navbar collapse */
-.navbar-collapse {
-    @apply hidden md:flex;
+.navbar-toggler .animated-icon span {
+    background-color: #39ff14;
 }
 
-.navbar-collapse.show {
-    @apply block;
-}
-
-/* Dropdown menu styling */
-.dropdown-menu {
-    @apply hidden mt-2 bg-white shadow-lg rounded-lg;
-}
-
-.dropdown-menu.show {
-    @apply block;
-}
-
-.dropdown-item {
-    @apply py-2 px-4 text-black transition-colors duration-500;
-}
-
-.dropdown-item:hover {
-    @apply bg-gray-100;
-}
-
-/* Light background styling */
-.bg-light {
-    @apply bg-gray-100;
-}
-
-/* Navbar reduced state */
-.navbar-reduce {
-    @apply bg-white shadow-md;
-}
-
-.navbar-reduce .nav-link {
-    @apply text-black;
-}

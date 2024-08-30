@@ -1,49 +1,29 @@
 {% load static tailwind_tags %}
-<header id="header" class="fixed top-0 left-0 w-full bg-transparent shadow-md z-50">
+<header id="header" class="fixed top-0 left-0 w-full bg-black shadow-md z-50">
     <div class="container mx-auto flex items-center justify-between py-4 px-6">
         <nav class="flex items-center justify-between w-full">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'stac_iitmandi/images/STAClogo.png' %}" class="h-12" alt="STAC">
+                <img src="{% static 'images/STAClogo.png' %}" class="h-12 neon-glow" alt="STAC">
             </a>
             <div class="flex items-center">
                 <!-- Toggler button -->
-                <button class="navbar-toggler ml-auto p-2 text-white focus:outline-none md:hidden" type="button" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNavbar()">
+                <button class="navbar-toggler ml-auto p-2 text-neon-green focus:outline-none md:hidden" type="button" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNavbar()">
                     <div class="animated-icon flex flex-col space-y-1">
-                        <span class="block w-6 h-0.5 bg-white"></span>
-                        <span class="block w-6 h-0.5 bg-white"></span>
-                        <span class="block w-6 h-0.5 bg-white"></span>
+                        <span class="block w-6 h-0.5 bg-neon-green transition-transform duration-300"></span>
+                        <span class="block w-6 h-0.5 bg-neon-green transition-transform duration-300"></span>
+                        <span class="block w-6 h-0.5 bg-neon-green transition-transform duration-300"></span>
                     </div>
                 </button>
                 <!-- Navbar menu -->
                 <div class="navbar-collapse md:flex items-center hidden" id="navbarDefault">
                     <ul class="navbar-nav flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 ml-auto">
-                        <li class="nav-item {% if request.path == '/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'home' %}">Home</a>
+                        {% for item in menu_items %}
+                        <li class="nav-item {% if request.path == item.url %}active{% endif %}">
+                            <a class="nav-link hover:text-neon-green transition duration-300" href="{% url item.url %}">
+                                {{ item.name }}
+                            </a>
                         </li>
-                        <li class="nav-item {% if request.path == '/events/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'events' %}">Events</a>
-                        </li>
-                        <li class="nav-item {% if request.path == '/blog/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'blog' %}">Blog</a>
-                        </li>
-                        <!-- <li class="nav-item {% if request.path == '/alumni/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="#">Alumni</a>
-                        </li> -->
-                        <li class="nav-item {% if request.path == '/gallery/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'gallery' %}">Gallery</a>
-                        </li>
-                        <li class="nav-item {% if request.path == '/coreteam/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'coreteam' %}">Team</a>
-                        </li>
-                        <li class="nav-item {% if request.path == '/aboutus/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'aboutus' %}">About</a>
-                        </li>
-                        <li class="nav-item {% if request.path == '/achievements/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'achievements' %}">Achievements</a>
-                        </li>
-                        <li class="nav-item {% if request.path == '/highlights/' %}active{% endif %}">
-                            <a class="nav-link hover:text-red-500" href="{% url 'highlights' %}">Highlights</a>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -52,8 +32,33 @@
 </header>
 
 <script>
+    const menuItems = document.querySelectorAll('.nav-item');
+    const toggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.getElementById('navbarDefault');
+
+    // Toggle Navbar
     function toggleNavbar() {
-        const navbarCollapse = document.getElementById('navbarDefault');
         navbarCollapse.classList.toggle('hidden');
+        toggler.setAttribute('aria-expanded', !navbarCollapse.classList.contains('hidden'));
+        toggler.querySelectorAll('span').forEach((line, index) => {
+            line.classList.toggle('rotate-45', index === 0);
+            line.classList.toggle('-rotate-45', index === 2);
+            if (index === 1) line.classList.toggle('opacity-0');
+        });
+    }
+
+    // Close navbar when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!navbarCollapse.contains(event.target) && !toggler.contains(event.target)) {
+            navbarCollapse.classList.add('hidden');
+            toggler.setAttribute('aria-expanded', false);
+            resetTogglerIcon();
+        }
+    });
+
+    function resetTogglerIcon() {
+        toggler.querySelectorAll('span').forEach(line => {
+            line.classList.remove('rotate-45', '-rotate-45', 'opacity-0');
+        });
     }
 </script>
