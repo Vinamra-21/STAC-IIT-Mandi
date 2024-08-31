@@ -7,31 +7,15 @@
 {% block content %}
 <div class="achievements-container">
     <div class="center-circle">
-        <h2>{{ central_achievement.title }}</h2>
-        <img src="{{ central_achievement.image.url }}" alt="{{ central_achievement.title }}">
-        <p>{{ central_achievement.description }}</p>
-        <p>Date: {{ central_achievement.date|date:"F j, Y" }}</p>
-        {% if central_achievement.tag %}
-        <p>Tag: {{ central_achievement.tag }}</p>
-        {% endif %}
+        <h2 id="central-title"></h2>
+        <p id="central-description"></p>
+        <p class="prestige">Our Prestige</p>
+        <p id="central-tag" class="tag"></p>
     </div>
     <div class="orbit">
         {% for achievement in achievements %}
-        <div class="circle" data-id="{{ achievement.id }}" onclick="showDetails('{{ achievement.id }}')">
+        <div class="circle" data-id="{{ achievement.id }}" onclick="showDetails({{ achievement.id }})">
             <img src="{{ achievement.image.url }}" alt="{{ achievement.title }}">
-            <h3>{{ achievement.title }}</h3>
-            <div id="details-{{ achievement.id }}" class="details-popup">
-                <div class="details-content">
-                    <span class="close-btn" onclick="closeDetails('{{ achievement.id }}')">&times;</span>
-                    <img src="{{ achievement.image.url }}" alt="{{ achievement.title }}">
-                    <h2>{{ achievement.title }}</h2>
-                    <p>{{ achievement.description }}</p>
-                    <p>Date: {{ achievement.date|date:"F j, Y" }}</p>
-                    {% if achievement.tag %}
-                    <p>Tag: {{ achievement.tag }}</p>
-                    {% endif %}
-                </div>
-            </div>
         </div>
         {% endfor %}
     </div>
@@ -40,27 +24,27 @@
 <script>
     function showDetails(id) {
         const centralCircle = document.querySelector('.center-circle');
-        const achievement = document.getElementById('details-' + id);
+        const achievementData = {
+            {% for achievement in achievements %}
+            {{ achievement.id }}: {
+                title: "{{ achievement.title }}",
+                description: "{{ achievement.description }}",
+                tag: "{{ achievement.tag }}",
+                image: "{{ achievement.image.url }}",
+            },
+            {% endfor %}
+        };
 
-        // Update central circle with selected achievement details
-        centralCircle.querySelector('h2').textContent = achievement.querySelector('h2').textContent;
-        centralCircle.querySelector('img').src = achievement.querySelector('img').src;
-        centralCircle.querySelector('p').textContent = achievement.querySelector('p').textContent;
-        centralCircle.querySelectorAll('p')[1].textContent = 'Date: ' + achievement.querySelectorAll('p')[1].textContent;
-        
-        const tag = achievement.querySelector('p:nth-child(4)');
-        if (tag) {
-            centralCircle.querySelector('p:nth-child(4)').textContent = 'Tag: ' + tag.textContent;
-        } else {
-            centralCircle.querySelector('p:nth-child(4)').textContent = '';
+        const selectedAchievement = achievementData[id];
+        if (selectedAchievement) {
+            centralCircle.querySelector('#central-title').textContent = selectedAchievement.title;
+            centralCircle.querySelector('#central-description').textContent = selectedAchievement.description;
+            centralCircle.querySelector('#central-tag').textContent = selectedAchievement.tag;
+            centralCircle.style.backgroundImage = `url('${selectedAchievement.image}')`;
+            centralCircle.style.opacity = "0.7";
+            centralCircle.querySelector('.prestige').style.display = 'none';
+
         }
-
-        // Display the details popup for the selected achievement
-        achievement.style.display = 'block';
-    }
-
-    function closeDetails(id) {
-        document.getElementById('details-' + id).style.display = 'none';
     }
 </script>
 {% endblock %}
