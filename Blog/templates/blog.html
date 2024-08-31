@@ -2,6 +2,24 @@
 {% load static %}
 {% block stylesheetsName %}
     <link rel="stylesheet" href="{% static 'styles_blog.css' %}">
-{% endblock  %}
+{% endblock %}
+
 {% block content %}
-{% endblock  %}
+<div class="blog-list">
+    {% for blog in blogs %}
+        <div class="blog-thumbnail">
+            <a href="#">
+                <div class="blog-image">
+                    <img src="{{ blog.thumbnail.url }}" alt="{{ blog.title }}">
+                </div>
+                <div class="blog-content">
+                    <h2 class="blog-title">{{ blog.title }}</h2>
+                    <p class="blog-detail">{{ blog.short_description }}</p>
+                    <p class="blog-editor">By {{ blog.editor_name }}</p>
+                    <p class="blog-edited-date">Last edited on {{ blog.edited_date|date:"F j, Y" }}</p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
