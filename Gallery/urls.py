@@ -6,5 +6,6 @@ from . import views
 
 urlpatterns = [
     path('', views.Gallery, name='gallery'),
+    path('gallery/event/<int:event_id>/', views.GalleryEvent, name='galleryEvent'),
     path("__reload__", include("django_browser_reload.urls")),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

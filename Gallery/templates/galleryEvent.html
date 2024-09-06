@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block stylesheetsName %}
+    <link rel="stylesheet" href="{% static 'styles_gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="event-gallery">
+    <div class="gallery-grid">
+        {% for image in images %}
+        <div class="gallery-item">
+            <img src="{{ image.url }}" alt="Event Image {{ forloop.counter }}">
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
