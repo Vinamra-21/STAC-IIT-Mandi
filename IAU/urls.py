@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path("", views.photogallery, name="photogallery"),
-    path("", views.videogallery, name="videogallery"),
+    path('', views.IAU, name='IAU'),
     path("__reload__", include("django_browser_reload.urls")),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
