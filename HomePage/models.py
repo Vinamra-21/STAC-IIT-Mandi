@@ -5,7 +5,6 @@ import os
 
 # Create your models here.
 
-
 class Projects(models.Model):
     topic = models.CharField(max_length=50, unique=True)
     description = RichTextField(blank=True, null=True)
