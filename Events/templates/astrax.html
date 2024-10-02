@@ -1,7 +1,12 @@
 {% extends 'layout.html' %}
 {% load static %}
-{% block content %}
 
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles_events.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
 <div class="bg-image astrax-logo header-pad banner-img" style="color: #FFFF;">
     <img src="{% static 'images/astrax.png' %}" alt="ASTRAX">
 </div>

@@ -1,6 +1,10 @@
 {% extends 'layout.html' %}
 {% load static %}
 
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles_gallery.css' %}">
+{% endblock stylesheet %}
+
 {% block content %}
 
 <div class="ach-image size-logo banner-img" style="color: #FFFF; padding:7%">

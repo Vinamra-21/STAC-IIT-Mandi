@@ -11,7 +11,7 @@ class MemberDetail(models.Model):
         ('A', 'Coordinator'),  
         ('B', 'Co-coordinator'),
         ('C', 'Core Team'),
-        ('D', 'Web Development Team'),
+        ('D', 'Mentor'),
     )
 
     position = models.CharField(max_length=1, choices=POSITIONS, default='C')

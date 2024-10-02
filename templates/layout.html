@@ -35,11 +35,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.1/venobox.min.css" integrity="sha512-e+0yqAgUQFoRrJ4pZigQXpOE0S7J9IGwmgH801h4H5ODqOCG8/GRfXHQ+9ab754NL79O7wDwdjwY3CcU8sEANg==" crossorigin="anonymous" />
   <!-- Custom CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'styles_coreTeam.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'styles_events.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'styles_gallery.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'styles_iau.css' %}">
-
+  {% block stylesheet %}{% endblock stylesheet %}
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
