@@ -1,14 +1,14 @@
-main {
-    font-family: 'Roboto', sans-serif;
-    color: #f0f0f0;
-    margin-top: 110px;
-    display: grid;
-    padding-left: 7%;
-    padding-right: 7%;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
-    gap: 15px;
+.backmain {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: url('images/back.jpg');
+}
+.banner-img{
+    background-image: url('images/back.jpg');
 }
 
 .team-card {
@@ -28,6 +28,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .team-card:hover {
@@ -46,15 +47,15 @@ main {
     width: 190px;
     height: 190px;
     position: relative;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center within .saturn */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     transition: transform 0.5s;
     transform-style: preserve-3d;
 }
 
 .team-card:hover .saturn-inner {
-    transform: translate(-49%, -52%) rotateY(180deg); /* Rotate from the center */
+    transform: translate(-49%, -52%) rotateY(180deg);
 }
 
 .saturn img,
@@ -62,8 +63,8 @@ main {
     backface-visibility: hidden;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    width: 100%; /* Ensure it takes the full size of .saturn-inner */
-    height: 100%; /* Ensure it takes the full size of .saturn-inner */
+    width: 100%; 
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -118,11 +119,26 @@ h2 {
 }
 
 .social-icons a:hover {
-    color: #ddd; /* Light hover effect */
+    color: #ddd;
 }
 
 .social-icons a svg {
     fill: #ffffff;
     height: 32px;
     width: 32px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .team-card {
+        width: 300px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-card {
+        width: 100%;
+        height: auto;
+    }
 }
