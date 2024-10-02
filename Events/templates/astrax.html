@@ -29,13 +29,14 @@
                 <hr class="titlehr" />
             </div>
             <div class="row justify-content-md-center">
-                {% for event in about_astrax %}
+                {% for event in astrax %}
                 <div class="col-lg-4 col-md-6 work-item">
                     <div class="work-wrap">
                     <img src="{{event.image.url}}" class="img-fluid" alt="">
                     <div class="work-info">
                         <h4>{{event.name}}</h4>
-                        <p class="font-italic">{{event.description|safe}}</p>
+                        <p class="font-italic">{{e
+                            vent.description|safe}}</p>
                         <div class="work-links">
                         <a href="{{event.image.url}}" data-gall="work-Gallery" class="venobox" title="{{event.name}}"><i class="fa fa-plus"></i></a>
                         </div>

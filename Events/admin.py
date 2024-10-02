@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import Event
-# Register your models here.
+from .models import Utkarsh, Zenith, Pleiades, Astrax
 
-admin.site.register(Event)
+admin.site.register(Utkarsh)
+admin.site.register(Zenith)
+admin.site.register(Pleiades)
+admin.site.register(Astrax)
+

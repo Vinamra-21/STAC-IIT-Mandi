@@ -1,17 +1,19 @@
 from django.shortcuts import render
-from .models import Event
+from .models import Astrax, Pleiades, Zenith, Utkarsh
 
 # Create your views here.
 def astrax(request):
-    # events = Event.objects.all()
-    return render(request, 'astrax.html')
-# {'events': events}
+    astrax = Astrax.objects.all()
+    return render(request, 'astrax.html',{'astrax':astrax})
 
 def pleiades(request):
-    return render(request, 'pleiades.html')
+    pleiades = Pleiades.objects.all()
+    return render(request, 'pleiades.html',{'pleiades':pleiades})
 
 def utkarsh(request):
-    return render(request, 'utkarsh.html')
+    zenith = Zenith.objects.all()
+    return render(request, 'utkarsh.html',{'zenith':zenith})
 
 def zenith(request):
-    return render(request, 'zenith.html')
+    utkarsh = Utkarsh.objects.all()
+    return render(request, 'zenith.html',{'utkarsh':utkarsh})
