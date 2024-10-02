@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'AboutUs',
     'IAU',
     'ckeditor',
+    'Alumni',
+    'HomePage',
 ]
 
 MIDDLEWARE = [
