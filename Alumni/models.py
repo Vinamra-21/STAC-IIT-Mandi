@@ -1,18 +1,19 @@
 from django.db import models
 from PIL import Image
-from ckeditor.fields import RichTextField
 import os
 
 class Alumni(models.Model):
-    name = models.CharField(default="", max_length=50, unique=True)
-    description = RichTextField(blank=True, null=True)
-    insta = models.URLField(default="#/", blank=True, null=False)
-    linkedin = models.URLField(default="#/", blank=True, null=False)
-    image = models.ImageField(default="default.jpg", upload_to="images/Alumni")
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100, default='email')
+    message = models.CharField(max_length=100, default='andhera_kayam_rahe')
+
+    linkedin_url  = models.CharField(max_length=100, default='linkedin')
+    instagram_url = models.CharField(max_length=100, default='instagram')
+    image = models.ImageField(default="default.webp", upload_to="images/CoreTeam")
 
     def __str__(self):
         return self.name
-
+    
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
@@ -27,4 +28,3 @@ class Alumni(models.Model):
 
             self.image.name = os.path.splitext(self.image.name)[0] + '.webp'
             super().save(*args, **kwargs)
-
