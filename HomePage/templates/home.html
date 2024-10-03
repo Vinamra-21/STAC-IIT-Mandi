@@ -25,7 +25,7 @@
     <div class="container mt-2">
         <h1 class="title-a text-center headingtext">STAC | IIT MANDI</h1>
         <hr class="titlehr" />
-        <p class="pb-3">{{introduction.description|safe}}</p>
+        <p class="pb-3">STAC is a club where one can explore every corner of the technical knowledge he/she has! The club enables students to not only enhance their knowledge about the different aspects related to astronomy and astrophysics but also use the technologies available to develop their skills that will help them in future. Its activities include observing astronomical objects and bodies, organizing talks about astronomy and astrophysics, doing projects related to space technology. The club organizes two major fests in an academic year: Astrax, an inter-college astro-meet and Zenith, an intra-college astronomy fest. There are various discussions, quizzes, talks, hackathons that STAC organizes throughout the year.The vision of the club is to become self sufficient so that in the coming future, we discover new celestial bodies, publish research papers, participate and win inter-college events, be a part of the projects by leading organisations in the field of astronomy (NASA, ISRO, ESA etc) and much more.</p>
     </div>
 </div>
 
@@ -69,18 +69,18 @@
             <hr class="titlehr" />
         </div>
         <div class="row">
-            {% for fest in content.fests %} {% for link in links %} {% if link.linkname == fest.topic %}
+            {% for fest in content.fests %}
             <div class="col-lg-4">
                 <img src="{{fest.image.url}}" alt="" class="img-fluid" style="height: 12rem" />
             </div>
             <div class="col-lg-6" style="padding-bottom: 2rem; color: white">
-                <a href="{{link.link}}"><h4 class="text-center p-2" style="font-weight: bold; color: white">{{event.topic}}</h4></a>
+                <a href="{{fest.link}}"><h4 class="text-center p-2" style="font-weight: bold; color: white">{{fest.festname}}</h4></a>
                 <p class="font-italic">{{fest.description|safe}}</p>
                 <div class="work-links">
-                    <a href="{{link.link}}" title="More Details">Know More <i class="fa fa-link"></i></a>
+                    <a href="{{fest.link}}" title="More Details">Know More <i class="fa fa-link"></i></a>
                 </div>
             </div>
-            {% endif %} {% endfor %} {% endfor %}
+{% endfor %}
         </div>
     </div>
 </section>

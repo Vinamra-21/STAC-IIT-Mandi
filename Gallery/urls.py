@@ -4,8 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+
 urlpatterns = [
-    path("", views.photogallery, name="photogallery"),
-    path("", views.videogallery, name="videogallery"),
+    path('photogallery', views.photogallery, name='photogallery'),
+    path('videogallery', views.videogallery, name='videogallery'),
     path("__reload__", include("django_browser_reload.urls")),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
