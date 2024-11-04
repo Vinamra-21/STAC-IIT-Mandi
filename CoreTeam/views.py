@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from .models import MemberDetail
 
-# Create your views here.
-
 def CoreTeam(request):
-    members = MemberDetail.objects.all()
-    return render(request, 'coreTeam.html', {'team_member': members})
+    team_members = MemberDetail.objects.all()
+    members = {
+        'a': team_members.filter(position='A'),
+        'b': team_members.filter(position='B'),
+        'c': team_members.filter(position='C'),
+        'd': team_members.filter(position='D'),
+    }
+    return render(request, 'CoreTeam.html', {'team_member': members})
